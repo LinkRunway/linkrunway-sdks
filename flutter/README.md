@@ -2,13 +2,17 @@
 
 `package:linkrunway` is a pure Dart client with the same surface as the [JavaScript SDK](../js/sdk/README.md) for apps: consent, click-token capture, link resolution, events with an offline queue and retries, tracked shares, referral codes, the install ID, the first-launch match, ad-network claims and an attestation token setter. It is built on `package:http` and depends on nothing else.
 
-**It has no platform channels and no native code.** It cannot read deep links, the Play install referrer, an AdServices token or a device attestation by itself; the app passes those values in. [Values only native code can read](#values-only-native-code-can-read) shows where they can come from. Install it with `dart pub add linkrunway` (or `flutter pub add linkrunway`). See [Verified and not verified](#verified-and-not-verified) before relying on it.
+**It has no platform channels and no native code.** It cannot read deep links, the Play install referrer, an AdServices token or a device attestation by itself; the app passes those values in. [Values only native code can read](#values-only-native-code-can-read) shows where they can come from. Install it as a git dependency of this repository, as below. See [Verified and not verified](#verified-and-not-verified) before relying on it.
 
 ## Install
 
 ```yaml
 dependencies:
-  linkrunway: ^0.1.0
+  linkrunway:
+    git:
+      url: https://github.com/LinkRunway/linkrunway-sdks.git
+      ref: 0.2.1
+      path: flutter
 ```
 
 The package requires Dart 3.7 or newer and `http` 1.2.2 or newer. It ignores `.dart_tool/` and does not commit `pubspec.lock`: as a library it leaves the resolved versions to the app.

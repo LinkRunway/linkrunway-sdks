@@ -2,7 +2,7 @@
 
 A typed client for browsers, Node.js backends, and any other runtime with `fetch`. It is the core that the [React Native and Expo packages](../react-native/README.md) build on. It contains no native code and reads nothing from the device: no advertising ID, no fingerprint, no clipboard.
 
-Install it with `npm install @linkrunway/sdk`. The package ships ES module and CommonJS builds with type declarations and has no dependencies.
+Install it with `npm install https://github.com/LinkRunway/linkrunway-sdks/releases/download/0.2.1/linkrunway-sdk-0.1.0.tgz`. The package ships ES module and CommonJS builds with type declarations and has no dependencies.
 
 ## Setup
 

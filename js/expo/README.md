@@ -5,7 +5,7 @@ Two typed JavaScript packages on top of the [core SDK](../sdk/README.md):
 - `@linkrunway/sdk-react-native` connects the core SDK to an app: persistent storage, incoming links, the offline queue, and the first-launch match.
 - `@linkrunway/sdk-expo` re-exports that layer and adds an Expo config plugin that declares your link domains in the native projects.
 
-**Neither package contains a native module.** They do not import `react-native`, and they cannot read the Play install referrer, an AdServices token, or a device attestation. The app passes those values in; [Values only native code can read](#values-only-native-code-can-read) shows how. Install `@linkrunway/sdk-react-native` with npm, or `@linkrunway/sdk-expo` with `npx expo install` in an Expo app. See [Verified and not verified](#verified-and-not-verified) before relying on them.
+**Neither package contains a native module.** They do not import `react-native`, and they cannot read the Play install referrer, an AdServices token, or a device attestation. The app passes those values in; [Values only native code can read](#values-only-native-code-can-read) shows how. Install the core and React Native packages in one command: `npm install https://github.com/LinkRunway/linkrunway-sdks/releases/download/0.2.1/linkrunway-sdk-0.1.0.tgz https://github.com/LinkRunway/linkrunway-sdks/releases/download/0.2.1/linkrunway-sdk-react-native-0.1.0.tgz`. In an Expo app, add `https://github.com/LinkRunway/linkrunway-sdks/releases/download/0.2.1/linkrunway-sdk-expo-0.1.0.tgz` to the same command. See [Verified and not verified](#verified-and-not-verified) before relying on them.
 
 ## Setup
 
