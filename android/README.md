@@ -18,7 +18,7 @@ and in the app module:
 
 ```kotlin
 dependencies {
-    implementation("com.github.LinkRunway.linkrunway-sdks:linkrunway-android:0.2.0")
+    implementation("com.github.LinkRunway:linkrunway-sdks:0.2.0")
 }
 ```
 

@@ -8,7 +8,7 @@ Client SDKs for [LinkRunway](https://linkrunway.com): branded links, mobile deep
 | React Native | `npm install @linkrunway/sdk-react-native` | [js/react-native](js/react-native/README.md) |
 | Expo | `npx expo install @linkrunway/sdk-expo` | [js/expo](js/expo/README.md) |
 | iOS, tvOS, macOS | Swift Package Manager: `https://github.com/LinkRunway/linkrunway-sdks` | [ios](ios/README.md) |
-| Android, Android TV | JitPack: `com.github.LinkRunway.linkrunway-sdks:linkrunway-android` | [android](android/README.md) |
+| Android, Android TV | JitPack: `com.github.LinkRunway:linkrunway-sdks` | [android](android/README.md) |
 | Dart, Flutter | `dart pub add linkrunway` | [flutter](flutter/README.md) |
 
 Apps and web pages use a publishable key (`lr_pk_…`). Publishable keys record unverified, non-financial activity only: purchases, subscriptions, refunds and customer identity are reported by your server with a server key (`lr_sk_…`), which must never ship in an app or page. Create both under **Developers → API keys** in the [LinkRunway console](https://app.linkrunway.com/developers/keys).
