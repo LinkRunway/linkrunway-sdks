@@ -4,7 +4,7 @@ import Foundation
 struct Environment: Sendable {
     var transport: any Transport
     /// The store for a suite name. Apps always get the `UserDefaults` suite.
-    var storage: @Sendable (String) -> any KeyValueStore = { UserDefaults(suiteName: $0)! }
+    var storage: @Sendable (String) -> any KeyValueStore = { DefaultsStore(UserDefaults(suiteName: $0)!) }
     var now: @Sendable () -> Date = { Date() }
     var sleep: @Sendable (TimeInterval) async throws -> Void = { try await Task.sleep(nanoseconds: UInt64($0 * 1_000_000_000)) }
     var conversions: any ConversionUpdating = SystemConversions()

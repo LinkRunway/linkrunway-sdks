@@ -2,7 +2,7 @@ import Foundation
 
 public actor LinkRunway {
     /// Sent in the user agent as `LinkRunwaySDK/<version> iOS` (or `tvOS`).
-    public static let sdkVersion = "0.2.0"
+    public static let sdkVersion = "0.2.1"
 
     let endpoint: URL
     let key: String

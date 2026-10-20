@@ -15,7 +15,7 @@ import java.util.Date
 @RunWith(RobolectricTestRunner::class)
 class RequestTest {
     private val headers = mapOf(
-        "User-Agent" to "LinkRunwaySDK/0.2.0 Android",
+        "User-Agent" to "LinkRunwaySDK/0.2.1 Android",
         "Content-Type" to "application/json",
         "Authorization" to "Bearer $KEY",
     )

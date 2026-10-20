@@ -175,6 +175,6 @@ class LinkRunway internal constructor(
 
     companion object {
         /** The SDK version reported in the `LinkRunwaySDK/<version>` user agent. */
-        const val VERSION = "0.2.0"
+        const val VERSION = "0.2.1"
     }
 }

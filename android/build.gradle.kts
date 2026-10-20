@@ -6,7 +6,7 @@ plugins {
 // With rootProject.name this is the coordinate an app's includeBuild substitutes: com.linkrunway:linkrunway-android.
 // JitPack sets GROUP and VERSION when it builds a release tag of the public SDK repository.
 group = System.getenv("GROUP") ?: "com.linkrunway"
-version = System.getenv("VERSION") ?: "0.2.0"
+version = System.getenv("VERSION") ?: "0.2.1"
 android {
     namespace = "com.linkrunway.sdk"
     compileSdk = 35

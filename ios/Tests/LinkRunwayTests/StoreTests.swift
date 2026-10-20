@@ -9,7 +9,7 @@ import Testing
     @Test func userDefaultsAndTheTestStoreBehaveAlike() {
         let suite = RealSuite()
         defer { suite.remove() }
-        let backings: [any KeyValueStore] = [suite.defaults, MemoryStore()]
+        let backings: [any KeyValueStore] = [DefaultsStore(suite.defaults), MemoryStore()]
         for backing in backings {
             let store = Store(defaults: backing, scope: Self.scope)
             #expect(store.string(.clickToken) == nil)

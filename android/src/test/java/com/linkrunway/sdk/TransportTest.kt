@@ -39,7 +39,7 @@ class TransportTest {
         val request = server.seen.single()
         assertEquals("POST", request.method)
         assertEquals("/v1/track", request.path)
-        assertEquals("LinkRunwaySDK/0.2.0 Android", request.headers["user-agent"])
+        assertEquals("LinkRunwaySDK/0.2.1 Android", request.headers["user-agent"])
         assertEquals("Bearer $KEY", request.headers["authorization"])
         assertEquals("application/json", request.headers["content-type"])
         val body = JSONObject(request.body)

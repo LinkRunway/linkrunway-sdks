@@ -1,6 +1,6 @@
 # iOS and tvOS SDK
 
-LinkRunway for iOS is a Swift package with no dependencies: Swift 6 language mode, iOS 15+, tvOS 15+, macOS 12+. This page describes version 0.2.0. [Mobile integration](https://linkrunway.com/resources/mobile) covers link domains, Associated Domains, and referral codes.
+LinkRunway for iOS is a Swift package with no dependencies: Swift 6 language mode, iOS 15+, tvOS 15+, macOS 12+. This page describes version 0.2.1. [Mobile integration](https://linkrunway.com/resources/mobile) covers link domains, Associated Domains, and referral codes.
 
 Three rules hold on every path. Nothing is stored or sent until your app calls `setConsent(true)`. Only a publishable key (`lr_pk_…`) is accepted. The endpoint must be HTTPS (or `localhost`).
 
@@ -11,7 +11,7 @@ Nothing here has run on a physical device. Read [What was verified](#what-was-ve
 Add the package in Xcode (File → Add Package Dependencies, then enter `https://github.com/LinkRunway/linkrunway-sdks`), or in a manifest:
 
 ```swift
-.package(url: "https://github.com/LinkRunway/linkrunway-sdks", from: "0.2.0")
+.package(url: "https://github.com/LinkRunway/linkrunway-sdks", from: "0.2.1")
 // target dependency: .product(name: "LinkRunway", package: "linkrunway-sdks")
 ```
 
@@ -83,7 +83,7 @@ Calls made without consent send nothing and store nothing. They return `nil` (or
 
 Everything that existed in 0.1 keeps its signature, and an upgraded app keeps its stored click token and INSTALL marker. `track` refuses revenue events (`PURCHASE`, `SUBSCRIPTION`, `REFUND`). Report them from your backend with a server key.
 
-Every event carries `installId`, and `attestation` while a token is cached. Requests use `Authorization: Bearer <publishable key>` and the user agent `LinkRunwaySDK/0.2.0 iOS` (or `tvOS`). Each request is tried three times, backing off on 429, 5xx, and network errors. If it still fails, it throws: `LinkRunwayError.server(status, body)` for an HTTP error, otherwise the `URLError`. When delivery matters, keep your own event IDs and timestamps and retry with the same ones.
+Every event carries `installId`, and `attestation` while a token is cached. Requests use `Authorization: Bearer <publishable key>` and the user agent `LinkRunwaySDK/0.2.1 iOS` (or `tvOS`). Each request is tried three times, backing off on 429, 5xx, and network errors. If it still fails, it throws: `LinkRunwayError.server(status, body)` for an HTTP error, otherwise the `URLError`. When delivery matters, keep your own event IDs and timestamps and retry with the same ones.
 
 ## Install identity
 

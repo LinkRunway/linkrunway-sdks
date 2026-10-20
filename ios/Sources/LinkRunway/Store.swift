@@ -7,7 +7,15 @@ protocol KeyValueStore: Sendable {
     func removeObject(forKey key: String)
 }
 
-extension UserDefaults: KeyValueStore {}
+/// A `UserDefaults` suite as a store. Apple documents `UserDefaults` as thread-safe, but SDKs before
+/// Xcode 26 do not mark it `Sendable`, so the wrapper states it for every Xcode the package supports.
+struct DefaultsStore: KeyValueStore, @unchecked Sendable {
+    let defaults: UserDefaults
+    init(_ defaults: UserDefaults) { self.defaults = defaults }
+    func object(forKey key: String) -> Any? { defaults.object(forKey: key) }
+    func set(_ value: Any?, forKey key: String) { defaults.set(value, forKey: key) }
+    func removeObject(forKey key: String) { defaults.removeObject(forKey: key) }
+}
 
 /// The SDK's on-device state, with keys scoped to an endpoint and publishable key.
 struct Store {

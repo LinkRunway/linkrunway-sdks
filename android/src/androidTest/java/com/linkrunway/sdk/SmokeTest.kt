@@ -65,7 +65,7 @@ class SmokeTest {
         val tv = context.packageManager.hasSystemFeature(PackageManager.FEATURE_LEANBACK)
         assertEquals("POST", match.method)
         assertEquals("/v1/installs/match", match.path)
-        assertEquals("LinkRunwaySDK/0.2.0 ${if (tv) "AndroidTV" else "Android"}", match.headers["user-agent"])
+        assertEquals("LinkRunwaySDK/0.2.1 ${if (tv) "AndroidTV" else "Android"}", match.headers["user-agent"])
         assertEquals("Bearer $key", match.headers["authorization"])
         assertEquals("application/json", match.headers["content-type"])
         val body = JSONObject(match.body)

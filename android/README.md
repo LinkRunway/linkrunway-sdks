@@ -1,6 +1,6 @@
 # Android SDK
 
-LinkRunway for Android is the client for Android phones, tablets and Android TV (version `0.2.0`, minSdk 23). It resolves link opens, reports non-revenue events, resolves an install's first launch, forwards the Play install referrer for ad-network verification, and attaches a Play Integrity attestation to events.
+LinkRunway for Android is the client for Android phones, tablets and Android TV (version `0.2.1`, minSdk 23). It resolves link opens, reports non-revenue events, resolves an install's first launch, forwards the Play install referrer for ad-network verification, and attaches a Play Integrity attestation to events.
 
 Read [What was verified](#what-was-verified) before relying on it: everything below was exercised with JVM tests, local test servers and one emulator, not with a Play-distributed install, a real Play Integrity verdict or a real device.
 
@@ -18,7 +18,7 @@ and in the app module:
 
 ```kotlin
 dependencies {
-    implementation("com.github.LinkRunway:linkrunway-sdks:0.2.0")
+    implementation("com.github.LinkRunway:linkrunway-sdks:0.2.1")
 }
 ```
 
@@ -84,7 +84,7 @@ All network calls suspend; call them from a coroutine. `appId` is the app's ID i
 | `submitReferrerClaim(appId): ReferrerClaimResult?` | Forwards the raw Play referrer once per install. |
 | `attest(appId): AttestationResult?` | Play Integrity attestation, cached until it expires. |
 | `createReferralCode()`, `claimReferralCode(code, claimId)` | Unchanged explicit deferred codes (see [Mobile integration](https://linkrunway.com/resources/mobile)). |
-| `LinkRunway.VERSION` | `"0.2.0"`, sent as `User-Agent: LinkRunwaySDK/0.2.0 Android` (or `AndroidTV`). |
+| `LinkRunway.VERSION` | `"0.2.1"`, sent as `User-Agent: LinkRunwaySDK/0.2.1 Android` (or `AndroidTV`). |
 
 Without consent no call makes a request: they return `null` (`captureReferrer` does nothing), except `createShare` and `createReferralCode`, which throw `IllegalStateException`.
 
@@ -160,7 +160,7 @@ To use your own Play Integrity setup, implement `AttestationProvider.token(nonce
 
 ## Android TV
 
-A device with the leanback feature (`PackageManager.FEATURE_LEANBACK`) is reported as platform `androidtv`, with the user agent `LinkRunwaySDK/0.2.0 AndroidTV`, which the API recognizes as the SDK. Everything else works as on a phone, with these differences:
+A device with the leanback feature (`PackageManager.FEATURE_LEANBACK`) is reported as platform `androidtv`, with the user agent `LinkRunwaySDK/0.2.1 AndroidTV`, which the API recognizes as the SDK. Everything else works as on a phone, with these differences:
 
 - The server never applies probabilistic click matching to `androidtv`. The referrer token and view-through from CTV impressions still apply.
 - A TV without the Play Store (for example a device with another app store) has no install referrer: matching runs without one and claims return `NO_REFERRER`.

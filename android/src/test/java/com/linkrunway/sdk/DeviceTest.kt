@@ -31,8 +31,8 @@ class DeviceTest {
         sdk.open("https://go.example.com/l/abc")
 
         assertEquals("androidtv", h.transport.body("installs/match").getString("platform"))
-        h.transport.requests.forEach { assertEquals("LinkRunwaySDK/0.2.0 AndroidTV", it.headers["User-Agent"]) }
-        assertTrue(serverPattern.matches("LinkRunwaySDK/0.2.0 AndroidTV"))
+        h.transport.requests.forEach { assertEquals("LinkRunwaySDK/0.2.1 AndroidTV", it.headers["User-Agent"]) }
+        assertTrue(serverPattern.matches("LinkRunwaySDK/0.2.1 AndroidTV"))
         // The resolve endpoint accepts ios, android and web only.
         assertEquals("android", h.transport.body("resolve").getString("platform"))
     }
@@ -47,9 +47,9 @@ class DeviceTest {
         sdk.track("OPEN")
 
         assertEquals("android", h.transport.body("installs/match").getString("platform"))
-        h.transport.requests.forEach { assertEquals("LinkRunwaySDK/0.2.0 Android", it.headers["User-Agent"]) }
-        assertTrue(serverPattern.matches("LinkRunwaySDK/0.2.0 Android"))
-        assertEquals("0.2.0", LinkRunway.VERSION)
+        h.transport.requests.forEach { assertEquals("LinkRunwaySDK/0.2.1 Android", it.headers["User-Agent"]) }
+        assertTrue(serverPattern.matches("LinkRunwaySDK/0.2.1 Android"))
+        assertEquals("0.2.1", LinkRunway.VERSION)
     }
 
     @Test
