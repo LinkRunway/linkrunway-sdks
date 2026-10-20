@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.build/
+.swiftpm/
+build/
+.gradle/
+local.properties
+.dart_tool/
+pubspec.lock
+*.iml
+.idea/
+.DS_Store

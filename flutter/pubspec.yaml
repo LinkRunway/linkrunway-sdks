@@ -1,0 +1,19 @@
+name: linkrunway
+description: >-
+  Consent-gated LinkRunway client for Dart and Flutter apps: link resolution,
+  events with an offline queue, tracked shares, referral codes and first-launch
+  matching. Pure Dart, with no platform channels.
+version: 0.1.0
+homepage: https://linkrunway.com
+repository: https://github.com/LinkRunway/linkrunway-sdks
+issue_tracker: https://github.com/LinkRunway/linkrunway-sdks/issues
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  http: ^1.2.2
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.25.0

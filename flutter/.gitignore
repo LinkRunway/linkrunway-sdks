@@ -1,0 +1,9 @@
+# Dart tool state and resolved package configuration.
+.dart_tool/
+
+# A library does not pin the versions its users resolve; apps commit their own lockfile.
+pubspec.lock
+
+# Coverage and compiled test output.
+coverage/
+build/

@@ -1,0 +1,57 @@
+{
+  "name": "@linkrunway/sdk",
+  "version": "0.1.0",
+  "description": "Consent-gated LinkRunway client for browsers, Node.js and app runtimes: link resolution, events with an offline queue, tracked shares, referral codes and first-launch matching.",
+  "license": "MIT",
+  "author": "Kimeur Labs, LLC <support@linkrunway.com>",
+  "homepage": "https://github.com/LinkRunway/linkrunway-sdks/tree/main/js/sdk#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinkRunway/linkrunway-sdks.git",
+    "directory": "js/sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/LinkRunway/linkrunway-sdks/issues",
+    "email": "support@linkrunway.com"
+  },
+  "keywords": [
+    "linkrunway",
+    "attribution",
+    "deep-links",
+    "analytics",
+    "referrals"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --target es2020",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

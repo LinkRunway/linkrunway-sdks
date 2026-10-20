@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "linkrunway-js-sdks",
+  "type": "module",
+  "workspaces": [
+    "sdk",
+    "react-native",
+    "expo"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@expo/config-plugins": "57.0.10",
+    "@types/node": "22.15.3",
+    "tsup": "8.5.0",
+    "typescript": "5.9.3",
+    "vitest": "4.1.11"
+  }
+}
